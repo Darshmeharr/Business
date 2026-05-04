@@ -1,1 +1,174 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legacy General Store</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f5f0;
+    color: #333;
+}
+
+/* NAVBAR */
+nav {
+    background: #2c3e50;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    background: url('https://images.unsplash.com/photo-1607083206968-13611e3d76db') center/cover;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* SECTION */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* PRODUCTS */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #27ae60;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* CONTACT */
+.contact {
+    background: #2c3e50;
+    color: white;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>Legacy General Store</h1>
+        <p>Serving families for 70+ years</p>
+        <a href="#products" class="btn">Explore Products</a>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Our store has been serving the community for over 70 years. 
+        Built on trust, quality, and tradition, we provide daily essentials 
+        with a personal touch that modern stores can’t match.
+    </p>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+        <div class="card">
+            <h3>Groceries</h3>
+            <p>Daily fresh essentials</p>
+        </div>
+        <div class="card">
+            <h3>Snacks</h3>
+            <p>Biscuits, chips & more</p>
+        </div>
+        <div class="card">
+            <h3>Beverages</h3>
+            <p>Cold drinks & juices</p>
+        </div>
+        <div class="card">
+            <h3>Household Items</h3>
+            <p>Everything for your home</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Your Location Here</p>
+    <p>📞 +91 XXXXX XXXXX</p>
+    <p>🕒 Open: 8 AM - 9 PM</p>
+</section>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">💬</a>
+
+</body>
+</html>
