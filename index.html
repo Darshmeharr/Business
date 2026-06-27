@@ -3,456 +3,394 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Kakar and Lamba General Store</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<title>Kakar &amp; Lamba General Store — Wholesale Since 1955</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  :root{
+    --ink:#1f2d24;
+    --paper:#faf7f0;
+    --brass:#c9a227;
+    --brass-deep:#9c7c17;
+    --line:#d8d0bd;
+    --maroon:#6b2737;
+    --muted:#5b6359;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Fraunces', serif;font-weight:600;letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px;}
 
-body{
-    font-family:'Inter',sans-serif;
-    scroll-behavior:smooth;
-}
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1140px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand .mark{
+    width:40px;height:40px;border-radius:50%;
+    border:1.5px solid var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:14px;font-weight:600;
+  }
+  .brand .name{font-family:'Fraunces',serif;font-size:18px;font-weight:600;}
+  .brand .est{font-size:11px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;}
+  nav.links{display:flex;gap:28px;font-size:14px;}
+  nav.links a{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;}
+  nav.links a:hover{border-color:var(--brass-deep);}
+  .nav-cta{
+    background:var(--ink);color:var(--paper);
+    padding:10px 18px;border-radius:2px;font-size:13px;font-weight:500;
+  }
+  @media (max-width:760px){ nav.links{display:none;} }
 
-h1,h2,h3{
-    font-family:'Playfair Display',serif;
-}
-
-.hero{
-    background:
-    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-    url('https://images.unsplash.com/photo-1534723452862-4c874e70d6f2?auto=format&fit=crop&q=80');
-
-    background-size:cover;
-    background-position:center;
-}
-
-.nav-link{
+  /* Hero */
+  .hero{
     position:relative;
-}
+    padding:90px 0 70px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.3fr 0.9fr;gap:60px;align-items:center;}
+  @media (max-width:880px){ .hero .wrap{grid-template-columns:1fr;} }
+  .eyebrow{
+    font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brass-deep);
+    font-weight:600;margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(34px,5vw,54px);line-height:1.05;margin-bottom:22px;}
+  .hero p.lede{font-size:17px;color:var(--muted);max-width:480px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:2px;font-size:14px;font-weight:500;
+    border:1px solid var(--ink);
+  }
+  .btn.primary{background:var(--ink);color:var(--paper);}
+  .btn.ghost{background:transparent;color:var(--ink);}
 
-.nav-link::after{
-    content:'';
-    position:absolute;
-    width:0%;
-    height:2px;
-    background:#d97706;
-    left:0;
-    bottom:-6px;
-    transition:0.4s;
-}
+  /* Stamp */
+  .stamp{
+    width:230px;height:230px;border-radius:50%;
+    border:2px solid var(--maroon);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto;position:relative;
+    transform:rotate(-8deg);
+    flex-shrink:0;
+  }
+  .stamp::before{
+    content:"";position:absolute;inset:14px;border:1px solid var(--maroon);border-radius:50%;
+  }
+  .stamp-text{
+    text-align:center;color:var(--maroon);font-family:'Fraunces',serif;
+  }
+  .stamp-text .yr{font-size:38px;font-weight:600;display:block;}
+  .stamp-text .sub{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-top:4px;}
+  .stamp-text .since{font-size:13px;margin-top:10px;display:block;letter-spacing:0.04em;}
 
-.nav-link:hover::after{
-    width:100%;
-}
+  /* Section generic */
+  section{padding:80px 0;}
+  .section-head{margin-bottom:46px;max-width:620px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,36px);margin-bottom:14px;}
+  .section-head p{color:var(--muted);font-size:15.5px;}
 
-.card img{
-    transition:0.7s ease;
-}
+  /* Trust strip */
+  .trust{background:var(--ink);color:var(--paper);padding:38px 0;}
+  .trust .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+  .trust .stat{flex:1;min-width:140px;}
+  .trust .stat .num{font-family:'Fraunces',serif;font-size:30px;font-weight:600;color:var(--brass);}
+  .trust .stat .label{font-size:12.5px;color:#c9c4b4;letter-spacing:0.04em;margin-top:4px;}
 
-.card:hover img{
-    transform:scale(1.08);
-}
+  /* Categories / brand directory */
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:880px){ .cat-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .cat-grid{grid-template-columns:1fr;} }
+  .cat-card{
+    background:var(--paper);padding:28px 26px;min-height:200px;
+    display:flex;flex-direction:column;
+  }
+  .cat-card .cat-num{font-size:12px;color:var(--brass-deep);font-weight:600;letter-spacing:0.06em;margin-bottom:10px;}
+  .cat-card h3{font-size:18px;margin-bottom:14px;}
+  .cat-card ul{list-style:none;font-size:13.5px;color:var(--muted);}
+  .cat-card li{padding:3px 0;border-top:1px solid var(--line);}
+  .cat-card li:first-child{border-top:none;}
 
-.whatsapp{
-    animation:float 2s ease-in-out infinite;
-}
+  /* Heritage band */
+  .heritage{background:#f0ead9;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .heritage .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  @media (max-width:880px){ .heritage .wrap{grid-template-columns:1fr;} }
+  .heritage .frame{
+    border:3px solid var(--ink);padding:18px;background:var(--paper);
+    transform:rotate(-1.2deg);
+  }
+  .heritage .frame .photo{
+    height:260px;background:linear-gradient(135deg,#c9c2ab,#a9a18a);
+    display:flex;align-items:center;justify-content:center;color:#fff;
+    font-family:'Fraunces',serif;font-size:14px;letter-spacing:0.05em;
+  }
+  .heritage .frame .cap{text-align:center;font-size:12.5px;color:var(--muted);margin-top:10px;letter-spacing:0.03em;}
+  .heritage-copy h2{font-size:28px;margin-bottom:18px;}
+  .heritage-copy p{color:var(--muted);margin-bottom:16px;font-size:15px;}
 
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-}
+  /* Order section */
+  .order{background:var(--maroon);color:var(--paper);}
+  .order .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  @media (max-width:880px){ .order .wrap{grid-template-columns:1fr;} }
+  .order h2{font-size:30px;margin-bottom:16px;color:var(--paper);}
+  .order p{color:#e3cfd4;margin-bottom:24px;font-size:15px;}
+  .order .perks{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px;}
+  .order .perks li{display:flex;gap:10px;align-items:baseline;}
+  .order .perks li::before{content:"—";color:var(--brass);}
+  .order-card{
+    background:var(--paper);color:var(--ink);padding:32px;border-radius:2px;
+  }
+  .order-card h3{font-size:18px;margin-bottom:18px;}
+  .order-card .field{margin-bottom:14px;}
+  .order-card label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:5px;}
+  .order-card input,.order-card select,.order-card textarea{
+    width:100%;border:1px solid var(--line);padding:10px 12px;font-family:'Work Sans',sans-serif;
+    font-size:14px;border-radius:2px;background:#fff;
+  }
+  .order-card textarea{resize:vertical;min-height:70px;}
+  .order-card button{
+    margin-top:8px;width:100%;background:var(--ink);color:var(--paper);
+    border:none;padding:13px;font-size:14px;font-weight:500;border-radius:2px;cursor:pointer;
+  }
 
-.fade{
-    animation:fadeUp 1.2s ease;
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
+  /* Footer */
+  footer{padding:54px 0 36px;border-top:1px solid var(--line);}
+  footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  @media (max-width:760px){ footer .wrap{grid-template-columns:1fr;gap:30px;} }
+  footer h4{font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:14px;}
+  footer p, footer a{font-size:14px;color:var(--muted);display:block;margin-bottom:8px;}
+  footer .legal{margin-top:40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px;}
 </style>
 </head>
+<body>
 
-<body class="bg-stone-50 text-slate-900">
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="mark">K&amp;L</div>
+      <div>
+        <div class="name">Kakar &amp; Lamba</div>
+        <div class="est">General Store · Est. 1955</div>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#brands">Brands</a>
+      <a href="#heritage">Our story</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#order" class="nav-cta">Place an order</a>
+  </div>
+</header>
 
-<!-- NAVBAR -->
-<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 shadow-sm">
-
-<div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-
-<div class="text-2xl font-bold uppercase tracking-tight">
-Kakar & Lamba
-<span class="text-amber-600">Store</span>
-</div>
-
-<div class="hidden lg:flex gap-6 text-[12px] uppercase tracking-widest font-semibold flex-wrap">
-
-<a href="#home" class="nav-link hover:text-amber-600">Home</a>
-
-<a href="#cosmetics" class="nav-link hover:text-amber-600">Cosmetics</a>
-
-<a href="#hosiery" class="nav-link hover:text-amber-600">Hosiery</a>
-
-<a href="#babycare" class="nav-link hover:text-amber-600">Baby Care</a>
-
-<a href="#haircare" class="nav-link hover:text-amber-600">Hair Care</a>
-
-<a href="#cookingoil" class="nav-link hover:text-amber-600">Cooking Oil</a>
-
-<a href="#crockery" class="nav-link hover:text-amber-600">Crockery</a>
-
-<a href="#plastic" class="nav-link hover:text-amber-600">Plastic Goods</a>
-
-<a href="#vipbags" class="nav-link hover:text-amber-600">VIP Bags</a>
-
-<a href="#contact" class="nav-link hover:text-amber-600">Contact</a>
-
-</div>
-
-</div>
-
-</nav>
-
-<!-- HERO -->
-<section id="home" class="hero min-h-screen flex items-center justify-center text-center text-white px-6">
-
-<div class="max-w-4xl fade">
-
-<span class="uppercase tracking-[0.3em] text-amber-400 text-sm font-semibold">
-EST. 1958
-</span>
-
-<h1 class="text-5xl md:text-7xl mt-6 mb-8 leading-tight">
-First General Store<br>
-of its time in Kullu District
-</h1>
-
-<p class="text-lg md:text-xl text-stone-200 mb-10">
-68 years of trust, quality and tradition serving generations from Akhara Bazaar, Kullu.
-</p>
-
-<div class="flex flex-col md:flex-row justify-center gap-4">
-
-<a href="#collections"
-class="bg-amber-600 hover:bg-amber-700 px-8 py-4 font-bold tracking-widest text-sm transition">
-EXPLORE COLLECTIONS
-</a>
-
-<a href="#contact"
-class="bg-white text-slate-900 hover:bg-stone-200 px-8 py-4 font-bold tracking-widest text-sm transition">
-CONTACT STORE
-</a>
-
-</div>
-
-</div>
-
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Wholesale supplier · Trusted by retailers across the city</div>
+      <h1>Three generations of stocking what your shop needs.</h1>
+      <p class="lede">From Loreal to Patanjali, crockery to undergarments — Kakar &amp; Lamba has been the one wholesale stop retailers rely on for seventy years, with stock depth and fair pricing on every shelf.</p>
+      <div class="hero-actions">
+        <a href="#order" class="btn primary">Request a price list</a>
+        <a href="#brands" class="btn ghost">Browse our brands</a>
+      </div>
+    </div>
+    <div class="stamp">
+      <div class="stamp-text">
+        <span class="yr">70</span>
+        <span class="sub">Years in trade</span>
+        <span class="since">Est. 1955</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- STATS -->
-<section class="bg-slate-900 text-white py-20">
-
-<div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-
-<div>
-<h3 class="text-5xl text-amber-500 mb-3">1958</h3>
-<p class="uppercase tracking-widest text-xs text-stone-400">
-Founding Year
-</p>
+<div class="trust">
+  <div class="wrap">
+    <div class="stat"><div class="num">70+</div><div class="label">Years serving local retailers</div></div>
+    <div class="stat"><div class="num">45+</div><div class="label">Trusted brands stocked</div></div>
+    <div class="stat"><div class="num">9</div><div class="label">Product categories under one roof</div></div>
+    <div class="stat"><div class="num">3rd</div><div class="label">Generation now running the counter</div></div>
+  </div>
 </div>
 
-<div>
-<h3 class="text-5xl text-amber-500 mb-3">3</h3>
-<p class="uppercase tracking-widest text-xs text-stone-400">
-Generations
-</p>
-</div>
+<section id="brands">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What we stock</div>
+      <h2>One ledger, every category your shelf needs.</h2>
+      <p>Retailers stop placing five separate orders once they start with us — our range spans personal care, household, wellness and hardware lines, all billed and delivered together.</p>
+    </div>
 
-<div>
-<h3 class="text-5xl text-amber-500 mb-3">5000+</h3>
-<p class="uppercase tracking-widest text-xs text-stone-400">
-Products
-</p>
-</div>
-
-</div>
-
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-num">01 · Personal care &amp; cosmetics</div>
+        <h3>Skin &amp; beauty</h3>
+        <ul>
+          <li>Loreal</li><li>Garnier</li><li>Lotus</li><li>VLCC</li><li>Nivea</li><li>Joy</li><li>Park Avenue</li><li>Fogg</li><li>Nabeel (Dubai)</li>
+        </ul>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">02 · Hair care</div>
+        <h3>Hair colour &amp; treatment</h3>
+        <ul>
+          <li>Streax hair colours</li><li>Streax hair serums</li><li>Vasmol</li><li>Vicco herbal items</li>
+        </ul>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">03 · Health &amp; hygiene</div>
+        <h3>Daily essentials</h3>
+        <ul>
+          <li>Johnson &amp; Johnson</li><li>Sofy pads</li><li>Proease</li><li>Pure Roots</li><li>Reckitt</li><li>Bioteque</li>
+        </ul>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">04 · Wellness &amp; ayurveda</div>
+        <h3>Herbal &amp; ayurvedic</h3>
+        <ul>
+          <li>Patanjali products</li><li>Dabur items</li><li>Himalaya</li><li>Mama Earth items</li><li>Sniss Wellness</li><li>Treajar</li>
+        </ul>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">05 · Undergarments</div>
+        <h3>Innerwear range</h3>
+        <ul>
+          <li>VIP undergarments</li><li>Lux undergarments</li><li>Amul Comfy</li><li>Rupa Frontline</li><li>Faso</li><li>Red Rose panties</li>
+        </ul>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">06 · Household care</div>
+        <h3>Cleaning &amp; protection</h3>
+        <ul>
+          <li>Ujala</li><li>Nirma washing products</li><li>All Out</li><li>Baygon</li><li>Simco Oxy Veda</li>
+        </ul>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">07 · Home &amp; kitchen</div>
+        <h3>Crockery &amp; plastics</h3>
+        <ul>
+          <li>Crockery items</li><li>Jerry cans</li><li>Buckets, jugs, mugs, basins, patras</li><li>Bathroom accessories</li>
+        </ul>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">08 · Oils &amp; foods</div>
+        <h3>Cooking oils</h3>
+        <ul>
+          <li>Safola oil</li><li>Gia olive oil</li>
+        </ul>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">09 · Lifestyle &amp; misc.</div>
+        <h3>Other trusted names</h3>
+        <ul>
+          <li>Procter &amp; Gamble</li><li>Kio Karpen</li><li>Lee Ford</li><li>Figaro</li><li>Yardley</li><li>Eva</li><li>WattaGirl</li><li>Reebok</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- COLLECTIONS -->
-<section id="collections" class="py-24 max-w-7xl mx-auto px-6">
-
-<div class="text-center mb-20">
-
-<h2 class="text-5xl mb-5">
-Our Collections
-</h2>
-
-<div class="w-24 h-1 bg-amber-600 mx-auto"></div>
-
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-<!-- COSMETICS -->
-<div id="cosmetics" class="card bg-white rounded-2xl overflow-hidden shadow-lg">
-
-<div class="overflow-hidden">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80"
-class="w-full h-72 object-cover">
-</div>
-
-<div class="p-6">
-
-<h3 class="text-2xl mb-3">Cosmetics</h3>
-
-<p class="text-stone-500 text-sm">
-Beauty essentials, skincare, makeup and premium cosmetic products.
-</p>
-
-</div>
-
-</div>
-
-<!-- HOSIERY -->
-<div id="hosiery" class="card bg-white rounded-2xl overflow-hidden shadow-lg">
-
-<div class="overflow-hidden">
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80"
-class="w-full h-72 object-cover">
-</div>
-
-<div class="p-6">
-
-<h3 class="text-2xl mb-3">Hosiery Items</h3>
-
-<p class="text-stone-500 text-sm">
-Comfortable daily wear, socks, thermals and innerwear essentials.
-</p>
-
-</div>
-
-</div>
-
-<!-- BABY CARE -->
-<div id="babycare" class="card bg-white rounded-2xl overflow-hidden shadow-lg">
-
-<div class="overflow-hidden">
-<img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&q=80"
-class="w-full h-72 object-cover">
-</div>
-
-<div class="p-6">
-
-<h3 class="text-2xl mb-3">Baby Care Products</h3>
-
-<p class="text-stone-500 text-sm">
-Baby soaps, powders, diapers and newborn care essentials.
-</p>
-
-</div>
-
-</div>
-
-<!-- HAIR CARE -->
-<div id="haircare" class="card bg-white rounded-2xl overflow-hidden shadow-lg">
-
-<div class="overflow-hidden">
-<img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80"
-class="w-full h-72 object-cover">
-</div>
-
-<div class="p-6">
-
-<h3 class="text-2xl mb-3">Hair Care Products</h3>
-
-<p class="text-stone-500 text-sm">
-Hair oils, shampoos, conditioners and styling products.
-</p>
-
-</div>
-
-</div>
-
-<!-- COOKING OIL -->
-<div id="cookingoil" class="card bg-white rounded-2xl overflow-hidden shadow-lg">
-
-<div class="overflow-hidden">
-<img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80"
-class="w-full h-72 object-cover">
-</div>
-
-<div class="p-6">
-
-<h3 class="text-2xl mb-3">Cooking Oil</h3>
-
-<p class="text-stone-500 text-sm">
-Trusted healthy cooking oils for every household.
-</p>
-
-</div>
-
-</div>
-
-<!-- CROCKERY -->
-<div id="crockery" class="card bg-white rounded-2xl overflow-hidden shadow-lg">
-
-<div class="overflow-hidden">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80"
-class="w-full h-72 object-cover">
-</div>
-
-<div class="p-6">
-
-<h3 class="text-2xl mb-3">Crockery Items</h3>
-
-<p class="text-stone-500 text-sm">
-Elegant kitchenware, cups, plates and dining collections.
-</p>
-
-</div>
-
-</div>
-
-<!-- PLASTIC GOODS -->
-<div id="plastic" class="card bg-white rounded-2xl overflow-hidden shadow-lg">
-
-<div class="overflow-hidden">
-<img src="https://images.unsplash.com/photo-1583947582886-f40ec95dd752?auto=format&fit=crop&q=80"
-class="w-full h-72 object-cover">
-</div>
-
-<div class="p-6">
-
-<h3 class="text-2xl mb-3">Plastic Goods</h3>
-
-<p class="text-stone-500 text-sm">
-Storage containers, household items and utility products.
-</p>
-
-</div>
-
-</div>
-
-<!-- VIP BAGS -->
-<div id="vipbags" class="card bg-white rounded-2xl overflow-hidden shadow-lg">
-
-<div class="overflow-hidden">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80"
-class="w-full h-72 object-cover">
-</div>
-
-<div class="p-6">
-
-<h3 class="text-2xl mb-3">VIP Sky Bags & Suitcases</h3>
-
-<p class="text-stone-500 text-sm">
-Premium travel bags, luggage and branded suitcases.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="heritage" id="heritage">
+  <div class="wrap">
+    <div class="frame">
+      <div class="photo">Photograph from the original 1955 shop counter</div>
+      <div class="cap">Kakar &amp; Lamba General Store — first premises, 1955</div>
+    </div>
+    <div class="heritage-copy">
+      <div class="eyebrow">Our story</div>
+      <h2>Built on trust, restocked every generation.</h2>
+      <p>Kakar &amp; Lamba opened its doors in 1955 with a handful of household staples and a simple promise: fair prices, honest stock, and a shopkeeper who picks up the phone.</p>
+      <p>Seventy years on, that promise hasn't changed — only the shelf has grown. What started as a general store now carries everything from international skincare to local ayurveda, supplying retailers who've been ordering from us for decades, and their children who run those same shops today.</p>
+      <p>We still believe a wholesale relationship is built on the same things it always was: stock that's actually in stock, a fair bulk rate, and someone who remembers your last order.</p>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="bg-white py-24">
-
-<div class="max-w-4xl mx-auto px-6 text-center">
-
-<h2 class="text-5xl mb-8">
-Visit Our Store
-</h2>
-
-<p class="text-xl text-stone-600 mb-4">
-Kakar and Lamba General Store
-</p>
-
-<p class="text-stone-500 mb-3">
-Akhara Bazaar, Kullu, Himachal Pradesh
-</p>
-
-<div class="space-y-2 mb-10">
-
-<p class="font-semibold text-lg">
-📞 +91 9805460930
-</p>
-
-<p class="font-semibold text-lg">
-📞 +91 94180 91450
-</p>
-
-</div>
-
-<div class="flex flex-col md:flex-row justify-center gap-5">
-
-<a href="https://wa.me/919805460930"
-target="_blank"
-class="whatsapp bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full font-bold tracking-widest text-sm shadow-xl transition">
-
-WHATSAPP CONTACT 1
-
-</a>
-
-<a href="https://wa.me/919418091450"
-target="_blank"
-class="whatsapp bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full font-bold tracking-widest text-sm shadow-xl transition">
-
-WHATSAPP CONTACT 2
-
-</a>
-
-</div>
-
-</div>
-
+<section class="order" id="order">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:#e3cfd4;">For retailers</div>
+      <h2>Get our current price list and place your order.</h2>
+      <p>Tell us your shop and what you stock — we'll send a price list across your categories and set you up with a regular delivery slot.</p>
+      <ul class="perks">
+        <li>Bulk pricing slabs on every category</li>
+        <li>Fixed weekly delivery routes</li>
+        <li>Credit terms for regular retailers</li>
+        <li>One bill, every category, no separate vendors</li>
+      </ul>
+    </div>
+    <div class="order-card">
+      <h3>Request a price list</h3>
+      <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Request sent';">
+        <div class="field">
+          <label for="shop">Shop name</label>
+          <input id="shop" type="text" placeholder="Your shop name" required>
+        </div>
+        <div class="field">
+          <label for="owner">Owner name</label>
+          <input id="owner" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone / WhatsApp number</label>
+          <input id="phone" type="tel" placeholder="10-digit mobile number" required>
+        </div>
+        <div class="field">
+          <label for="categories">Categories you're interested in</label>
+          <select id="categories">
+            <option>Personal care &amp; cosmetics</option>
+            <option>Hair care</option>
+            <option>Health &amp; hygiene</option>
+            <option>Wellness &amp; ayurveda</option>
+            <option>Undergarments</option>
+            <option>Household care</option>
+            <option>Home, kitchen &amp; plastics</option>
+            <option>Oils &amp; foods</option>
+            <option>All categories</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" placeholder="Anything specific you're looking for"></textarea>
+        </div>
+        <button type="submit">Send request</button>
+      </form>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-stone-100 border-t border-stone-200 py-12 text-center">
-
-<h3 class="uppercase tracking-tight font-bold text-2xl mb-4">
-Kakar and Lamba General Store
-</h3>
-
-<p class="text-stone-500 mb-5">
-Serving Kullu Since 1958
-</p>
-
-<div class="flex justify-center gap-6 text-stone-400 mb-8">
-
-<a href="#" class="hover:text-amber-600 transition">
-Instagram
-</a>
-
-<a href="#" class="hover:text-amber-600 transition">
-Facebook
-</a>
-
-<a href="#" class="hover:text-amber-600 transition">
-Email
-</a>
-
-</div>
-
-<p class="text-[10px] uppercase tracking-widest text-stone-400">
-© 1958 - 2026 Kakar and Lamba General Store. All Rights Reserved.
-</p>
-
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h4>Kakar &amp; Lamba General Store</h4>
+      <p>Wholesale dealers in general items since 1955. Serving retail shopkeepers across the city with daily and weekly delivery.</p>
+    </div>
+    <div>
+      <h4>Visit / call</h4>
+      <a href="tel:+910000000000">+91 00000 00000</a>
+      <a href="https://wa.me/910000000000">WhatsApp ordering</a>
+      <p>Shop address, market area, your city</p>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <p>Monday–Saturday: 9:30am – 8:00pm</p>
+      <p>Sunday: 10:00am – 2:00pm</p>
+    </div>
+  </div>
+  <div class="wrap legal">
+    © 1955–2026 Kakar &amp; Lamba General Store. All brand names belong to their respective owners.
+  </div>
 </footer>
 
 </body>
